@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "bruce.debt-ledger",
+  "name": "Debt Ledger",
+  "version": "0.1.0",
+  "author": "Bruce",
+  "license": "MIT",
+  "description": "A local, manual debt payoff tracker with a minimal terminal-style panel.",
+  "kinds": ["bar-widget"],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Debt Ledger",
+    "description": "Track balances, payments, due days, and estimated payoff times.",
+    "category": "Tools",
+    "allowMultiple": false,
+    "defaultSection": "left"
+  }
+}
