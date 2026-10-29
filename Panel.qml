@@ -340,8 +340,13 @@ Panel {
     id: ledgerFile
     path: root.ledgerPath
     watchChanges: true
+    printErrors: false
     onLoaded: root.loadLedger(text())
-    onLoadFailed: {
+    onLoadFailed: function(error) {
+      if (error === FileViewError.FileNotFound) {
+        root.loadLedger("")
+        return
+      }
       root.debts = []
       root.dataLoaded = true
       root.dataError = "Could not read the local ledger. Data was not changed."
